@@ -43,3 +43,29 @@ Number of Attempts: 546588
 
 
 ```
+
+For Bonus Question (break_hash_faster file) :
+<Input: Salt, Hash that has to be broken>
+
+```bash
+>>[path to python.exe] break_hash_faster.py f0744d60dd500c92c0d37c16174cc58d3c4bdd8e ece4bb07f2580ed8b39aa52b7f7f918e43033ea1
+
+Salt Term :  f0744d60dd500c92c0d37c16174cc58d3c4bdd8e
+Passowrd Hash : ece4bb07f2580ed8b39aa52b7f7f918e43033ea1
+Hash Value : harib
+Time Taken : 0.921999931335
+Number of Attempts: 546372
+
+
+
+```
+
+For Bonus Question (bruteforcefile) :
+<Input: Hash that has to be broken>
+
+```bash
+>>[path to python.exe] bruteforce.py 34302959e138917ce9339c0b30ec50e650ce6b40 
+
+
+```
+
