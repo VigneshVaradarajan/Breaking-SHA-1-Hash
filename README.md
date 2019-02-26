@@ -1,4 +1,5 @@
 # SHA1 Hash breaker
+By Vignesh Varadarajan
 Blockchain Assignment 2 - Georgia State University
 
 This is a python code that breaks a given SHA1 by making a brute force attack that reads through an exhaustive list of common passwords.
