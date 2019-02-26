@@ -10,6 +10,8 @@ with open('dict.txt', 'r') as f:
     contents = f.readlines()
 count = 0
 
+contents = contents[300000:700000]
+
 
 def brute_force(content):
     global count
@@ -23,22 +25,26 @@ def brute_force(content):
             print("---------------------" + key1.strip()+" "+ key2_str.strip()+"--------------------")
             with open('found.txt', 'w') as f:
                 f.write("---------------------" + key1.strip()+" "+ key2_str.strip()+"--------------------")
-            break
         calculated_hash = (hashlib.sha1(key2_str + " " + key1).hexdigest())
         if calculated_hash == hash:
             print("---------------------" + key2_str.strip() + " " + key1.strip() + "--------------------")
             with open('found.txt', 'w') as f:
                 f.write("---------------------" + key2_str.strip() + " " + key1.strip() + "--------------------")
-            break
     count = count + 1
-    print key1
 
 
 if __name__ == '__main__':
     start = time.time()
-    pool = Pool()
-    result = pool.map(brute_force, contents)
-    pool.terminate()
+    if len(sys.argv) == 1:
+        print("Invalid Arguments")
+        exit(0)
+    else:
+        if len(sys.argv) == 2:
+            print ("Input Hash is : " + sys.argv[1])
+            pool = Pool()
+            result = pool.map(brute_force, contents)
+            pool.terminate()
     end = time.time()
+    print("Hash Value : " + "If present can be found in found.txt generated in the workspace")
     print("Time Taken : " + str(end - start))
     print("Number of Attempts: " + str(count))
